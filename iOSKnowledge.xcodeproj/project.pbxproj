@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB21B7F81D7800D1001035BD /* LTTouchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB21B7F71D7800D1001035BD /* LTTouchViewController.m */; };
+		FB21B7FB1D780135001035BD /* LTiOSBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB21B7FA1D780135001035BD /* LTiOSBaseViewController.m */; };
+		FB21B8051D7945F4001035BD /* LTGestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB21B8041D7945F4001035BD /* LTGestureViewController.m */; };
 		FBC6F30C1D6D798900751E00 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FBC6F30B1D6D798900751E00 /* main.m */; };
 		FBC6F30F1D6D798900751E00 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FBC6F30E1D6D798900751E00 /* AppDelegate.m */; };
 		FBC6F3121D6D798900751E00 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBC6F3111D6D798900751E00 /* ViewController.m */; };
@@ -27,6 +30,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB21B7F61D7800D1001035BD /* LTTouchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTouchViewController.h; sourceTree = "<group>"; };
+		FB21B7F71D7800D1001035BD /* LTTouchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTouchViewController.m; sourceTree = "<group>"; };
+		FB21B7F91D780135001035BD /* LTiOSBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTiOSBaseViewController.h; sourceTree = "<group>"; };
+		FB21B7FA1D780135001035BD /* LTiOSBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTiOSBaseViewController.m; sourceTree = "<group>"; };
+		FB21B8031D7945F4001035BD /* LTGestureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTGestureViewController.h; sourceTree = "<group>"; };
+		FB21B8041D7945F4001035BD /* LTGestureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTGestureViewController.m; sourceTree = "<group>"; };
 		FBC6F3071D6D798900751E00 /* iOSKnowledge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSKnowledge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBC6F30B1D6D798900751E00 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FBC6F30D1D6D798900751E00 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -73,6 +82,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FB21B7F51D7800D1001035BD /* UITouch */ = {
+			isa = PBXGroup;
+			children = (
+				FB21B7F61D7800D1001035BD /* LTTouchViewController.h */,
+				FB21B7F71D7800D1001035BD /* LTTouchViewController.m */,
+			);
+			path = UITouch;
+			sourceTree = "<group>";
+		};
+		FB21B8021D7945F3001035BD /* UIGestureRecognizer */ = {
+			isa = PBXGroup;
+			children = (
+				FB21B8031D7945F4001035BD /* LTGestureViewController.h */,
+				FB21B8041D7945F4001035BD /* LTGestureViewController.m */,
+			);
+			path = UIGestureRecognizer;
+			sourceTree = "<group>";
+		};
 		FBC6F2FE1D6D798900751E00 = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +200,10 @@
 		FBC6F32D1D6D7DB100751E00 /* iOS基础 */ = {
 			isa = PBXGroup;
 			children = (
+				FB21B7F91D780135001035BD /* LTiOSBaseViewController.h */,
+				FB21B7FA1D780135001035BD /* LTiOSBaseViewController.m */,
+				FB21B8021D7945F3001035BD /* UIGestureRecognizer */,
+				FB21B7F51D7800D1001035BD /* UITouch */,
 			);
 			path = "iOS基础";
 			sourceTree = "<group>";
@@ -330,10 +361,13 @@
 				FBC6F33F1D6D86E600751E00 /* UINavigationController+Third.m in Sources */,
 				FBC6F3371D6D7E3D00751E00 /* LTDevelopmentLanguageViewController.m in Sources */,
 				FBC6F3121D6D798900751E00 /* ViewController.m in Sources */,
+				FB21B8051D7945F4001035BD /* LTGestureViewController.m in Sources */,
+				FB21B7F81D7800D1001035BD /* LTTouchViewController.m in Sources */,
 				FBC8FB121D6E7EC0002B972E /* LTKVOViewController.m in Sources */,
 				FBC6F34C1D6D8DC100751E00 /* LTKVCViewController.m in Sources */,
 				FBC6F33A1D6D7E5900751E00 /* LTOCViewController.m in Sources */,
 				FBC8FB151D6EBC90002B972E /* LTPageView.m in Sources */,
+				FB21B7FB1D780135001035BD /* LTiOSBaseViewController.m in Sources */,
 				FBC6F3521D6D912900751E00 /* LTCourse.m in Sources */,
 				FBC6F3271D6D7A5D00751E00 /* LTMainViewController.m in Sources */,
 				FBC6F3461D6D88F000751E00 /* LTBaseViewController.m in Sources */,

@@ -1,26 +1,25 @@
 //
-//  LTMainViewController.m
+//  LTiOSBaseViewController.m
 //  iOSKnowledge
 //
-//  Created by Jonny on 16/8/24.
+//  Created by Jonny on 16/9/1.
 //  Copyright © 2016年 Jonny. All rights reserved.
 //
 
-#import "LTMainViewController.h"
-#import "LTDevelopmentLanguageViewController.h"
 #import "LTiOSBaseViewController.h"
+#import "LTTouchViewController.h"
+#import "LTGestureViewController.h"
 
-@interface LTMainViewController ()
+@interface LTiOSBaseViewController ()
 <
     UITableViewDelegate,
     UITableViewDataSource
 >
-
 @property (nonatomic,strong)NSArray *titles;   ///< 标题
 
 @end
 
-@implementation LTMainViewController
+@implementation LTiOSBaseViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -31,53 +30,55 @@
     [self initView];
 }
 
+#pragma mark - 初始化数据
 - (void)initData {
+ 
+    self.titles = @[@"UITouch",@"UIGesture"];
     
-    self.titles = @[@"开发语言",@"iOS基础",@"iOS高级",@"热门技术",@"热门第三方",@"系统框架"];
 }
 
+#pragma mark - 初始化视图
 - (void)initView {
-    
-    self.title = @"iOS开发知识";
-    self.view.backgroundColor = [UIColor whiteColor];
-    
-    UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+ 
+    UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 64)];
     tableView.delegate = self;
     tableView.dataSource = self;
-    [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+    tableView.backgroundColor = [UIColor yellowColor];
     tableView.tableFooterView = [UIView new];
     [self.view addSubview:tableView];
+    
 }
 
-#pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return self.titles == nil ? 0 : self.titles.count;
+    return self.titles.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    
+    if (!cell) {
+        
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
+    }
+    
     cell.textLabel.text = self.titles[indexPath.row];
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    cell.textLabel.font = [UIFont systemFontOfSize:12];
     return cell;
+    
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     if (indexPath.row == 0) {
         
-        LTDevelopmentLanguageViewController *develop = [LTDevelopmentLanguageViewController new];
-        [self.navigationController pushViewController:develop animated:YES];
-        
-    } else if (indexPath.row == 1) {
-    
-        [self.navigationController pushViewController:[LTiOSBaseViewController new] animated:YES];
+        [self.navigationController pushViewController:[LTTouchViewController new] animated:YES];
 
+    }else if (indexPath.row == 1){
         
+        [self.navigationController pushViewController:[LTGestureViewController new] animated:YES];
     }
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
